@@ -2,11 +2,11 @@ import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 import '../styles/App.css'
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0)
-
+  
   return (
     <>
       <div>
@@ -29,6 +29,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Link to="/store">Store</Link>
       <div>
         <Outlet></Outlet>
       </div>
