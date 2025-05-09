@@ -8,6 +8,7 @@ import './styles/index.css'
 import App from './components/App.jsx'
 import StorePage from './components/StorePage.jsx';
 import CheckoutPage from './components/CheckoutPage.jsx'
+import HomePage from './components/HomePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,13 +16,17 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        index: true,
+        element: <HomePage />,
+      },
+      {
         path: "store",
         element: <StorePage />,
       },
       {
         path: "checkout",
         element: <CheckoutPage />,
-      }
+      },
     ],
   },
 ]);
