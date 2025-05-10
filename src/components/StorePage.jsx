@@ -9,50 +9,23 @@ function StorePage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        const productIds = [10, 11, 12, 13, 14];
 
-        const newData = []
-
-        fetch('https://fakestoreapi.com/products/10')
-            .then((response) => {
-                if (response.status >= 400) {
-                    throw new Error('Server error')
-                }
-                return response.json()
-            })
-            .then((response) => {
-                newData.push(response)
-            })
-            .catch(err => setError(err))
-            .finally(() => setLoading(false))
-
-        fetch('https://fakestoreapi.com/products/11')
-            .then((response) => {
-                if (response.status >= 400) {
-                    throw new Error('Server error')
-                }
-                return response.json()
-            })
-            .then((response) => {
-                newData.push(response)
-            })
-            .catch(err => setError(err))
-            .finally(() => setLoading(false))
-
-        fetch('https://fakestoreapi.com/products/12')
-            .then((response) => {
-                if (response.status >= 400) {
-                    throw new Error('Server error')
-                }
-                return response.json()
-            })
-            .then((response) => {
-                newData.push(response)
-                setData(newData)
-            })
-            .catch(err => setError(err))
-            .finally(() => setLoading(false))
-
-    }, [])
+        Promise.all(
+            productIds.map(id =>
+                fetch(`https://fakestoreapi.com/products/${id}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to fetch product ${id}`);
+                        }
+                        return response.json();
+                    })
+            )
+        )
+        .then(setData)
+        .catch(err => setError(err))
+        .finally(() => setLoading(false));
+    }, []);
 
     const cards = data.map((item) => {
         return <Card product={item} key={item.id}></Card>
