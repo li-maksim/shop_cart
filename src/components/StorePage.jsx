@@ -16,7 +16,7 @@ function StorePage() {
                 fetch(`https://fakestoreapi.com/products/${id}`)
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error(`Failed to fetch product ${id}`);
+                            throw new Error(`Failed to fetch product with ID ${id}`);
                         }
                         return response.json();
                     })
