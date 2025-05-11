@@ -13,7 +13,7 @@ function Card({product}) {
             }
         }
         function increase() {
-            if (amount < 100) {
+            if (amount < 99) {
                 setAmount(amount + 1)
             }
         }
