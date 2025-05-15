@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from '../styles/Card.module.css'
 import Input from './Input'
 
-function Card({product}) {
+function Card({product, fn}) {
 
     const [amount, setAmount] = useState(1)
     const  amountFns = (() => {
@@ -26,6 +26,8 @@ function Card({product}) {
         return {inputFn, increase, decrease}
     })()
 
+    const [order, setOrder] = useState({id: product.id, amount: 1})
+
     return (
         <div className="card">
             <div>
@@ -37,7 +39,7 @@ function Card({product}) {
                     <Input amount={amount} fn={amountFns.inputFn}></Input>
                     <button className={styles.btn} onClick={amountFns.increase}>+</button>
                 </div>
-                <button className={styles.btn}>Add to Cart</button>
+                <button className={styles.btn} onClick={() => {fn(order)}}>Add to Cart</button>
             </div>
         </div>
     )

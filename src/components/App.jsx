@@ -5,33 +5,16 @@ import styles from '../styles/App.module.css'
 import { Outlet, Link } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [products, setProducts] = useState([])
   
+  function addToCart(obj) {
+    setProducts([...products, {id: obj.id, amount: obj.amount}])
+  }
   return (
     <>
+      <h1>MY APP</h1>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Link to="/store">Store</Link>
-      <div>
-        <Outlet></Outlet>
+        <Outlet context={{addToCart, products}}></Outlet>
       </div>
     </>
   )

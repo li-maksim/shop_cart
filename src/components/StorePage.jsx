@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import Card from "./Card.jsx"
-
+import { useOutletContext, Link } from "react-router-dom"
 
 function StorePage() {
+
+    const addToCart = useOutletContext().addToCart
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null)
@@ -28,7 +30,7 @@ function StorePage() {
     }, []);
 
     const cards = data.map((item) => {
-        return <Card product={item} key={item.id}></Card>
+        return <Card product={item} key={item.id} fn={addToCart}></Card>
     })
     
     if (loading) return <p>Loading...</p>;
@@ -40,6 +42,7 @@ function StorePage() {
             <div className="cards"> 
                 {cards}
             </div>
+            <Link to="/checkout">Cart</Link>
         </>
     )
 }
