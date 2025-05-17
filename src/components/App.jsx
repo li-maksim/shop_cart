@@ -8,6 +8,7 @@ function App() {
   const [products, setProducts] = useState([])
   
   function addToCart(obj) {
+    console.log(obj)
     setProducts([...products, {id: obj.id, amount: obj.amount}])
   }
   return (

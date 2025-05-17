@@ -31,11 +31,15 @@ function CheckoutPage() {
         .finally(() => setLoading(false));
     }, []);
 
+    const cards = data.map((item) => {
+        return <h2>{item.title}</h2>
+    })
+
     return (
         <>
             <h1>Checkout</h1>
             <div>
-                {data[0].title && <h2>{data[0].title}</h2>}
+                {cards}
             </div>
         </>
     )
