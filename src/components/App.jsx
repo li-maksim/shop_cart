@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
+import Header from './Header.jsx';
 import styles from '../styles/App.module.css'
 import { Outlet, Link } from "react-router-dom";
 
@@ -13,10 +12,10 @@ function App() {
   }
   return (
     <>
-      <h1>MY APP</h1>
-      <div>
+      <Header />
+      <main>
         <Outlet context={{addToCart, products}}></Outlet>
-      </div>
+      </main>
     </>
   )
 }
