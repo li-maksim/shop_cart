@@ -5,6 +5,8 @@ body {
     --text-prim-color: #46494F;
     --text-snd-color: #FFFFFF;
     --dark-grey: #231F20;
+    --background-color: #05422C;
+    --btn-color: #17AF26;
 }
 
 * {
@@ -14,8 +16,23 @@ body {
 
 .link {
     color: var(--text-prim-color);
+    text-decoration: none;
 }
 
 .icon {
     font-size: 32px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.main {
+    min-height: 75vh;
+    padding: 20px 10%;
 }

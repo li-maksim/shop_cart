@@ -4,7 +4,7 @@
     height: 60px;
     display: flex;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 0 10%;
 }
 
 .logo {
@@ -25,7 +25,8 @@
 .links {
     display: flex;
     width: 350px;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 20px;
 }
 
 .link {

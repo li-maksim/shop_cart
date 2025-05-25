@@ -1,0 +1,29 @@
+.homepage {
+    composes: main from './index.css';
+    background: linear-gradient(45deg, #AAAAAA 0%, #05422C 100%);
+    display: flex;
+}
+
+.homepage * {
+    color: var(--text-snd-color);
+}
+
+.img {
+    width: 512px;
+}
+
+.h1 {
+    margin-top: 40px;
+}
+
+.p {
+    max-width: 90%;
+}
+
+.btn {
+    background-color: var(--btn-color);
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    margin-top: 20px;
+}

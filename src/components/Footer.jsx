@@ -8,8 +8,8 @@ function Footer() {
             © 2022 Top Shelf BC. All Rights Reserved. 
             </div>
             <div className={styles.links}>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
+                <a href="#" className='link'>Privacy Policy</a>
+                <a href="#" className='link'>Terms & Conditions</a>
             </div>
         </footer>
     )
