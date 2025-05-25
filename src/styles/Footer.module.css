@@ -1,0 +1,19 @@
+.footer {
+    box-sizing: border-box;
+    background-color: var(--dark-grey);
+    min-height: 70px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer * {
+    color: var(--text-snd-color);
+    font-size: 14px;
+}
+
+.links {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+}

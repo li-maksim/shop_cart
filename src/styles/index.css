@@ -3,7 +3,8 @@
 body {
     margin: 0;
     --text-prim-color: #46494F;
-    --text-snd-color: #FFF;
+    --text-snd-color: #FFFFFF;
+    --dark-grey: #231F20;
 }
 
 * {
