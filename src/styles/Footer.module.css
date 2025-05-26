@@ -17,3 +17,7 @@
     width: 30%;
     justify-content: space-around;
 }
+
+.links a:hover {
+    color: #999999;
+}

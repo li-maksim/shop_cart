@@ -19,8 +19,16 @@ body {
     text-decoration: none;
 }
 
+.link:hover {
+    color: black;
+}
+
 .icon {
     font-size: 32px;
+}
+
+.icon:hover {
+    color: black;
 }
 
 h1 {
@@ -30,6 +38,11 @@ h1 {
 button {
     border: none;
     outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 .main {
