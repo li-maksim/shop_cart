@@ -1,0 +1,24 @@
+.main {
+    composes: main from './index.css';
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: var(--btn-color);
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    color: var(--text-snd-color);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}

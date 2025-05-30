@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react"
-import Card from "./Card.jsx"
-import { useOutletContext, Link } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import Card from './Card.jsx'
+import { useOutletContext, Link } from 'react-router-dom'
+import styles from '../styles/StorePage.module.css'
+import { useNavigate } from 'react-router-dom'
 
 function StorePage() {
 
+    const navigate = useNavigate()
     const addToCart = useOutletContext().addToCart
 
     const [data, setData] = useState([])
@@ -37,13 +40,13 @@ function StorePage() {
     if (error) return <p>A network error was encountered</p>;
 
     return (
-        <>
+        <div className={styles.main}>
             <h1>Store</h1>
-            <div className="cards"> 
+            <div className={styles.cards}> 
                 {cards}
             </div>
-            <Link to="/checkout">Cart</Link>
-        </>
+            <button className={styles.btn} onClick={() => navigate('/checkout')}>Go to Checkout</button>
+        </div>
     )
 }
 

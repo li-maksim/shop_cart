@@ -41,10 +41,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    transform: scale(1.1);
-}
-
 .main {
     min-height: 75vh;
     padding: 20px 10%;

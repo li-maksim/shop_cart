@@ -1,18 +1,56 @@
 .card {
     width: 300px;
-    height: 400px;
+    min-height: 400px;
 }
 
 .img {
+    display: block;
     max-height: 200px;
+    margin: 0 auto;
 }
 
 .title {
-    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    font-size: 16px;
+    min-height: 60px;
 }
 
-.descr {
-    max-width: 100%;
+.title_wrapper {
+    position: relative;
+}
+
+.tooltip {
+    display: block;
+    background-color: var(--dark-grey);
+    color: var(--text-snd-color);
+    padding: 10px;
+    font-size: 12px;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    visibility: hidden;
+}
+
+.title_wrapper:hover .tooltip {
+    visibility: visible;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.stars {
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.stars svg {
+    font-size: 16px;
 }
 
 .amount_btns {
@@ -20,5 +58,23 @@
 }
 
 .btn {
-    border: none;
+    background: none;
+    font-size: 20px;
+}
+
+.add_btn {
+    background-color: var(--btn-color);
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    color: var(--text-snd-color);
+    margin-top: 20px;
+}
+
+.add_btn:hover {
+    transform: scale(1.05);
+}
+
+.gold_icon {
+    fill: #FFD700;
 }
