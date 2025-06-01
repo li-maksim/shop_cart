@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from '../styles/Card.module.css'
-import Input from './Input'
+import Input from './Input.jsx'
 import { HiStar } from 'react-icons/hi'
 
 function Card({product, fn}) {
@@ -68,7 +68,7 @@ function Card({product, fn}) {
                 <p className={styles.price}>${product.price}</p>
                 <div className={styles.amount_btns}>
                     <button className={styles.btn} onClick={amountFns.decrease}>-</button>
-                    <Input amount={amount} fn={amountFns.inputFn}></Input>
+                    <Input val={amount} fn={amountFns.inputFn}></Input>
                     <button className={styles.btn} onClick={amountFns.increase}>+</button>
                 </div>
                 <button className={styles.add_btn} onClick={() => {fn(order)}}>Add to Cart</button>

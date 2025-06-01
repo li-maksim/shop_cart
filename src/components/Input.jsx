@@ -1,9 +1,9 @@
 import styles from '../styles/Input.module.css'
 
-function Input({amount, fn}) {
+function Input({type = 'number', val, fn, name}) {
 
     return (
-        <input type="number" className={styles.input} value={amount} onChange={e => fn(e.target.value)} max="99" min="0" role="input"/>
+        <input type={type} className={styles.input} value={val} name={name} placeholder={name} onChange={e => fn(e.target.value, type)} role="input"/>
     )
 }
 
