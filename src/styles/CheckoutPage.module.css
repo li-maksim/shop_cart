@@ -1,0 +1,3 @@
+.checkout_page {
+    composes: main from './index.css';
+}

@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import { useOutletContext } from 'react-router-dom'
+import CheckoutCard from './CheckoutCard.jsx'
+import styles from '../styles/CheckoutPage.module.css'
 
 function CheckoutPage() {
 
@@ -31,17 +33,25 @@ function CheckoutPage() {
         .finally(() => setLoading(false));
     }, []);
 
-    const cards = data.map((item) => {
-        return <h2>{item.title}</h2>
+    const cards = data.map((item, index) => {
+        return <CheckoutCard product={item} amount={products[index].amount} />
     })
 
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>A network error was encountered</p>;
+
     return (
-        <>
+        <div className={styles.checkout_page}>
             <h1>Checkout</h1>
-            <div>
-                {cards}
+            <div className="content">
+                <div>
+                    {cards}
+                </div>
+                <div className="total">
+                    
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 

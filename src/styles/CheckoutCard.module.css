@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    justify-content: left;
+    gap: 25px;
+}
+
+.img {
+    display: block;
+    max-height: 56px;
+    max-width: 56px;
+}
+
+.price_wrapper {
+    display: flex;
+}

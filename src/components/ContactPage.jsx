@@ -36,9 +36,9 @@ function ContactPage() {
     return (
         <div className={styles.contact_page}>
             <h1>Contact Us</h1>
-            <p className={styles.p}>We will be glad to hear from you! <br></br> Leave us your contact information and we'll get in touch.</p>
             <div className={styles.content}>
                 <form className={styles.form} action="POST" onSubmit={(e) => handleSubmit(e)} >
+                    <p className={styles.p}>We will be glad to hear from you! <br></br> Leave us your contact information and we'll get in touch.</p>
                     <Input type="text" name="Name" val={info.name} fn={handleChange} />
                     <Input type="email" name="Email" val={info.email} fn={handleChange} />
                     <Input type="phone" name="Phone" val={info.phone} fn={handleChange} />
