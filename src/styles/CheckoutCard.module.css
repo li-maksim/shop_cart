@@ -2,14 +2,21 @@
     display: flex;
     justify-content: left;
     gap: 25px;
+    align-items: center;
+}
+
+.img_wrapper {
+    width: 56px;
+    display: flex;
+    justify-content: center;
 }
 
 .img {
-    display: block;
-    max-height: 56px;
-    max-width: 56px;
+    height: 56px;
+    margin: 0 auto;
 }
 
 .price_wrapper {
     display: flex;
+    gap: 5px;
 }

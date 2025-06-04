@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useOutletContext } from 'react-router-dom'
 import CheckoutCard from './CheckoutCard.jsx'
 import styles from '../styles/CheckoutPage.module.css'
+import { keyboard } from '@testing-library/user-event/dist/cjs/keyboard/index.js'
 
 function CheckoutPage() {
 
@@ -34,7 +35,7 @@ function CheckoutPage() {
     }, []);
 
     const cards = data.map((item, index) => {
-        return <CheckoutCard product={item} amount={products[index].amount} />
+        return <CheckoutCard product={item} amount={products[index].amount } key={index} />
     })
 
     if (loading) return <p>Loading...</p>;
@@ -43,14 +44,16 @@ function CheckoutPage() {
     return (
         <div className={styles.checkout_page}>
             <h1>Checkout</h1>
-            <div className="content">
-                <div>
-                    {cards}
-                </div>
-                <div className="total">
-                    
-                </div>
+            <div>
+                {products.length
+                ? cards
+                : <p>Your cart is empty</p>
+                }
             </div>
+            <div className="total">
+                
+            </div>
+            {products.length > 0 && <button className={styles.btn}>Purchase</button>}
         </div>
     )
 }

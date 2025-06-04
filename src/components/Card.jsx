@@ -26,8 +26,6 @@ function Card({product, fn}) {
 
         return {inputFn, increase, decrease}
     })()
-
-    const [order, setOrder] = useState({id: product.id, amount: 1})
     
     function stars() {
         const rate = []
@@ -71,7 +69,7 @@ function Card({product, fn}) {
                     <Input val={amount} fn={amountFns.inputFn}></Input>
                     <button className={styles.btn} onClick={amountFns.increase}>+</button>
                 </div>
-                <button className={styles.add_btn} onClick={() => {fn(order)}}>Add to Cart</button>
+                <button className={styles.add_btn} onClick={() => {fn({id: product.id, amount: amount})}}>Add to Cart</button>
         </div>
     )
 }

@@ -8,8 +8,15 @@ function App() {
   const [products, setProducts] = useState([])
   
   function addToCart(obj) {
-    console.log(obj)
-    setProducts([...products, {id: obj.id, amount: obj.amount}])
+    // console.log(obj)
+    if (products.some(e => e.id === obj.id)) {
+      let item = products.find(e => e.id === obj.id)
+      let newArr = products.filter(e => e.id !== obj.id)
+      newArr.unshift({id: obj.id, amount: item.amount + obj.amount})
+      setProducts(newArr)
+    } else {
+      setProducts([...products, {id: obj.id, amount: obj.amount}])
+    }
   }
   return (
     <>

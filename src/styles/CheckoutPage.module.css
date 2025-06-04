@@ -1,3 +1,18 @@
 .checkout_page {
     composes: main from './index.css';
 }
+
+.btn {
+    display: block;
+    background-color: var(--btn-color);
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: var(--text-snd-color);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}

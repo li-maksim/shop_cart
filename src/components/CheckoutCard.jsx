@@ -5,7 +5,9 @@ function CheckoutCard({product, amount}) {
     
     return( 
         <div className={styles.card}>
-            <img className={styles.img} src={product.image} alt="" />
+            <div className={styles.img_wrapper}>
+                <img className={styles.img} src={product.image} alt="" />
+            </div>
             <h3>{product.title}</h3>
             <div className={styles.price_wrapper}>
                 <p>x{amount}</p>
