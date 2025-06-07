@@ -18,9 +18,15 @@ function App() {
       setProducts([...products, {id: obj.id, amount: obj.amount}])
     }
   }
+
+  let productAmounts = products.map((item) => {
+    return item.amount
+  })
+  let total = productAmounts.reduce((acc, curr) => acc + curr, 0)
+
   return (
     <>
-      <Header />
+      <Header totalAmount={total} />
       <main className={styles.main}>
         <Outlet context={{addToCart, products}}></Outlet>
       </main>

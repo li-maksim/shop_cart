@@ -22,7 +22,7 @@ function Header({totalAmount = 0}) {
                 <Link to="/checkout" className={`link ${styles.link}`}>
                     <HiOutlineShoppingBag className="icon"/>
                 </Link>
-                <p className={styles.cart_num}>{totalAmount}</p>
+                <span data-testid="totalAmount" className={styles.cart_num}>{totalAmount}</span>
             </div>
         </header>
     )
