@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { vi } from 'vitest'
 import Card from '../components/Card'
 
 describe('Card component',  () => {
@@ -72,5 +73,32 @@ describe('Card component',  () => {
         await user.click(btn)
 
         expect(input.value).toMatch(99)
+    })
+
+    it('Changes Add button to Delete button', async () => {
+
+        const user = userEvent.setup()
+        const fn = vi.fn()
+        render(<Card product={product} fn={fn} />)
+        const addBtn = screen.getByRole('button', {name: 'Add to Cart'})
+
+        await user.click(addBtn)
+        const delBtn = screen.getByRole('button', {name: 'Delete'})
+
+        expect(delBtn).toBeVisible()
+    })
+
+    it('Changes Delete button to Add button', async () => {
+
+        const user = userEvent.setup()
+        const fn = vi.fn()
+        render(<Card product={product} fn={fn} />)
+        const addBtn = screen.getByRole('button', {name: 'Add to Cart'})
+
+        await user.click(addBtn)
+        const delBtn = screen.getByRole('button', {name: 'Delete'})
+        await user.click(delBtn)
+
+        expect(addBtn).toBeVisible()
     })
 })

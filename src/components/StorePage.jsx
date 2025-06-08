@@ -8,6 +8,7 @@ function StorePage() {
 
     const navigate = useNavigate()
     const addToCart = useOutletContext().addToCart
+    const delFromCart = useOutletContext().delFromCart
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null)
@@ -33,15 +34,14 @@ function StorePage() {
     }, []);
 
     const cards = data.map((item) => {
-        return <Card product={item} key={item.id} fn={addToCart}></Card>
+        return <Card product={item} key={item.id} addFn={addToCart} delFn={delFromCart}></Card>
     })
-    
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>A network error was encountered</p>;
 
     return (
         <div className={styles.main}>
             <h1>Store</h1>
+            {loading && <p>Loading...</p>}
+            {error && <p>A network error was encountered</p>}
             <div className={styles.cards}> 
                 {cards}
             </div>

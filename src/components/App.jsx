@@ -19,6 +19,11 @@ function App() {
     }
   }
 
+  function delFromCart(id) {
+    let newArr = products.filter(e => e.id !== id)
+    setProducts(newArr)
+  }
+
   let productAmounts = products.map((item) => {
     return item.amount
   })
@@ -28,7 +33,7 @@ function App() {
     <>
       <Header totalAmount={total} />
       <main className={styles.main}>
-        <Outlet context={{addToCart, products}}></Outlet>
+        <Outlet context={{addToCart, delFromCart, products}}></Outlet>
       </main>
       <Footer />
     </>

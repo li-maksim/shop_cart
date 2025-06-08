@@ -38,13 +38,14 @@ function CheckoutPage() {
         return <CheckoutCard product={item} amount={products[index].amount } key={index} />
     })
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>A network error was encountered</p>;
+
 
     return (
         <div className={styles.checkout_page}>
             <h1>Checkout</h1>
             <div>
+                {loading && <p>Loading...</p>}
+                {error && <p>A network error was encountered</p>}
                 {products.length
                 ? cards
                 : <p>Your cart is empty</p>

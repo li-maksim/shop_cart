@@ -78,3 +78,16 @@
 .gold_icon {
     fill: #FFD700;
 }
+
+.del_btn {
+    background-color: #c2c2c2;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    color: var(--text-prim-color);
+    margin-top: 20px; 
+}
+
+.hidden {
+    display: none;
+}
