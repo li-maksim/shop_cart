@@ -5,28 +5,43 @@ import { HiStar } from 'react-icons/hi'
 
 function Card({product, addFn, delFn, products}) {
 
-    const isInCart = products.some(p => p.id === product.id);
+    const isInCart = products.some(p => p.id === product.id)
+    const [rawInput, setRawInput] = useState('1')
     const [amount, setAmount] = useState(1)
     const  amountFns = (() => {
 
-        function inputFn(num) {
-            if (num >= 0 && num < 100) {
-                setAmount(parseInt(num))
+        function inputFn() {
+            if (rawInput > 0 && rawInput < 100) {
+                setAmount(parseInt(rawInput))
+                setRawInput(String(amount))
+                if (isInCart) {
+                    addFn({id: product.id, amount: parseInt(rawInput)})
+                }
+            } else {
+                setRawInput(amount)
             }
         }
         function increase() {
             if (amount < 99) {
                 setAmount(amount + 1)
+                setRawInput(amount + 1)
+                if (isInCart) addFn({id: product.id, amount: 1})
             }
         }
         function decrease() {
             if (amount > 1) {
                 setAmount(amount - 1)
+                setRawInput(amount - 1)
+                if (isInCart) addFn({id: product.id, amount: -1})
             }
         }
 
         return {inputFn, increase, decrease}
     })()
+    
+    function handleChange(num) {
+        setRawInput(num)
+    }
     
     function stars() {
         const rate = []
@@ -56,6 +71,7 @@ function Card({product, addFn, delFn, products}) {
     }
     function del() {
         delFn(product.id)
+        setRawInput('1')
     }
 
     return (
@@ -74,7 +90,7 @@ function Card({product, addFn, delFn, products}) {
                 <p className={styles.price}>${product.price}</p>
                 <div className={styles.amount_btns}>
                     <button className={styles.btn} onClick={amountFns.decrease}>-</button>
-                    <Input val={amount} fn={amountFns.inputFn}></Input>
+                    <Input val={rawInput} fn={handleChange} blur={amountFns.inputFn}></Input>
                     <button className={styles.btn} onClick={amountFns.increase}>+</button>
                 </div>
                 {
