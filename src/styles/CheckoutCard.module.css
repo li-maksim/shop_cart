@@ -20,3 +20,22 @@
     display: flex;
     gap: 5px;
 }
+
+.btns {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background: none;
+    font-size: 18px;
+}
+
+.btns input {
+    height: 18px;
+    max-width: 40px;
+}
+
+.btn svg {
+    margin-top: 6px;
+}

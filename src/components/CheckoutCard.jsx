@@ -1,22 +1,46 @@
 import Input from './Input.jsx'
 import styles from '../styles/CheckoutCard.module.css'
+import { HiOutlineTrash } from 'react-icons/hi'
 
-function CheckoutCard({product, amount}) {
+function CheckoutCard({product, amount, fns, delFn}) {
     
-    return( 
+    const change = (() => {
+
+        function increase() {
+            fns(product.id, amount + 1)
+        }
+
+        function decrease() {
+            if (amount <= 1) {
+                delFn(product.id)
+            } else {
+                fns(product.id, amount - 1)
+            }
+        }
+
+        function inputFn(num) {
+            fns(product.id, num)
+        }
+
+        return {increase, decrease, inputFn}
+    })()
+
+    if (amount) return( 
         <div className={styles.card}>
             <div className={styles.img_wrapper}>
                 <img className={styles.img} src={product.image} alt="" />
             </div>
             <h3>{product.title}</h3>
             <div className={styles.price_wrapper}>
-                <p>x{amount}</p>
-                <p>${product.price * amount}</p>
-                <div className="btns">
-                    {/* <button className={styles.btn} onClick={amountFns.decrease}>-</button>
-                    <Input val={amount} fn={amountFns.inputFn}></Input>
-                    <button className={styles.btn} onClick={amountFns.increase}>+</button> */}
+                <div className={styles.btns}>
+                    <button className={styles.btn} data-testid="del_btn" onClick={() => delFn(product.id)}>
+                        <HiOutlineTrash />
+                    </button>
+                    <button className={styles.btn} onClick={change.decrease} >-</button>
+                    <Input val={amount} fn={change.inputFn}></Input>
+                    <button className={styles.btn} onClick={change.increase} >+</button>
                 </div>
+                <p>${product.price * amount}</p>
             </div>
         </div>
     )

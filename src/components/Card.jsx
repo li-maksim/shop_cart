@@ -3,8 +3,9 @@ import styles from '../styles/Card.module.css'
 import Input from './Input.jsx'
 import { HiStar } from 'react-icons/hi'
 
-function Card({product, addFn, delFn}) {
+function Card({product, addFn, delFn, products}) {
 
+    const isInCart = products.some(p => p.id === product.id);
     const [amount, setAmount] = useState(1)
     const  amountFns = (() => {
 
@@ -50,25 +51,11 @@ function Card({product, addFn, delFn}) {
         )
     }
 
-    const [visibility, setVisibility] = useState({add: styles.add_btn, del: styles.hidden})
-
-    function toggleVisibility() {
-        let newObj = {}
-        if (visibility.add !== styles.hidden) {
-            newObj = {add: styles.hidden, del: styles.del_btn}
-        } else {
-            newObj = {add: styles.add_btn, del: styles.hidden}
-        }
-        setVisibility(newObj)
-    }
-
     function add() {
         addFn({id: product.id, amount: amount})
-        toggleVisibility()
     }
     function del() {
         delFn(product.id)
-        toggleVisibility()
     }
 
     return (
@@ -90,8 +77,11 @@ function Card({product, addFn, delFn}) {
                     <Input val={amount} fn={amountFns.inputFn}></Input>
                     <button className={styles.btn} onClick={amountFns.increase}>+</button>
                 </div>
-                <button className={visibility.add} onClick={() => add()}>Add to Cart</button>
-                <button className={visibility.del} onClick={() => del()}>Delete</button>
+                {
+                    isInCart
+                    ? <button className={styles.del_btn} onClick={() => del()}>Delete</button>
+                    : <button className={styles.add_btn} onClick={() => add()}>Add to Cart</button>
+                }
         </div>
     )
 }

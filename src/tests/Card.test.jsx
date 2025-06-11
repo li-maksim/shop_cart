@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { vi } from 'vitest'
-import Card from '../components/Card'
+import Card from '../components/Card.jsx'
 
 describe('Card component',  () => {
 
@@ -79,7 +79,7 @@ describe('Card component',  () => {
 
         const user = userEvent.setup()
         const fn = vi.fn()
-        render(<Card product={product} fn={fn} />)
+        render(<Card product={product} addFn={fn} delFn={fn} />)
         const addBtn = screen.getByRole('button', {name: 'Add to Cart'})
 
         await user.click(addBtn)
@@ -92,7 +92,7 @@ describe('Card component',  () => {
 
         const user = userEvent.setup()
         const fn = vi.fn()
-        render(<Card product={product} fn={fn} />)
+        render(<Card product={product} addFn={fn} delFn={fn} />)
         const addBtn = screen.getByRole('button', {name: 'Add to Cart'})
 
         await user.click(addBtn)

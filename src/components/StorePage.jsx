@@ -9,6 +9,7 @@ function StorePage() {
     const navigate = useNavigate()
     const addToCart = useOutletContext().addToCart
     const delFromCart = useOutletContext().delFromCart
+    const products = useOutletContext().products
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null)
@@ -34,7 +35,7 @@ function StorePage() {
     }, []);
 
     const cards = data.map((item) => {
-        return <Card product={item} key={item.id} addFn={addToCart} delFn={delFromCart}></Card>
+        return <Card product={item} key={item.id} addFn={addToCart} delFn={delFromCart} products={products}></Card>
     })
 
     return (

@@ -87,7 +87,3 @@
     color: var(--text-prim-color);
     margin-top: 20px; 
 }
-
-.hidden {
-    display: none;
-}

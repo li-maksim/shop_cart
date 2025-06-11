@@ -6,24 +6,29 @@ import { keyboard } from '@testing-library/user-event/dist/cjs/keyboard/index.js
 
 function CheckoutPage() {
 
+    const changeAmount = useOutletContext().changeAmount
+    const delFn = useOutletContext().delFromCart
     const products = useOutletContext().products
-    const productIds = []
-    products.forEach((item) => {
-        productIds.push(item.id)
-    })
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
 
+        if (products.length === 0) {
+            setData([])
+            setLoading(false)
+            return
+        }
+    
+        setLoading(true)
         Promise.all(
-            productIds.map(id =>
-                fetch(`https://fakestoreapi.com/products/${id}`)
+            products.map(p =>
+                fetch(`https://fakestoreapi.com/products/${p.id}`)
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error(`Failed to fetch product with ID ${id}`);
+                            throw new Error(`Failed to fetch product with ID ${p.id}`);
                         }
                         return response.json();
                     })
@@ -31,14 +36,15 @@ function CheckoutPage() {
         )
         .then(setData)
         .catch(err => setError(err))
-        .finally(() => setLoading(false));
-    }, []);
+        .finally(() => setLoading(false))
+
+    }, [products]);
 
     const cards = data.map((item, index) => {
-        return <CheckoutCard product={item} amount={products[index].amount } key={index} />
+        const prod = products.find(p => p.id === item.id)
+        if (!prod) return null
+        return <CheckoutCard product={item} amount={prod.amount} key={index} fns={changeAmount} delFn={delFn} />
     })
-
-
 
     return (
         <div className={styles.checkout_page}>
