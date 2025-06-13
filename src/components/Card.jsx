@@ -5,18 +5,16 @@ import { HiStar } from 'react-icons/hi'
 
 function Card({product, addFn, delFn, products}) {
 
-    const isInCart = products.some(p => p.id === product.id)
+    const [isInCart, setIsInCart] = useState(false)
     const [rawInput, setRawInput] = useState('1')
     const [amount, setAmount] = useState(1)
+
     const  amountFns = (() => {
 
         function inputFn() {
             if (rawInput > 0 && rawInput < 100) {
                 setAmount(parseInt(rawInput))
-                setRawInput(String(amount))
-                if (isInCart) {
-                    addFn({id: product.id, amount: parseInt(rawInput)})
-                }
+                if (isInCart) setIsInCart(false)
             } else {
                 setRawInput(amount)
             }
@@ -25,14 +23,14 @@ function Card({product, addFn, delFn, products}) {
             if (amount < 99) {
                 setAmount(amount + 1)
                 setRawInput(amount + 1)
-                if (isInCart) addFn({id: product.id, amount: 1})
+                if (isInCart) setIsInCart(false)
             }
         }
         function decrease() {
             if (amount > 1) {
                 setAmount(amount - 1)
                 setRawInput(amount - 1)
-                if (isInCart) addFn({id: product.id, amount: -1})
+                if (isInCart) setIsInCart(false)
             }
         }
 
@@ -41,6 +39,7 @@ function Card({product, addFn, delFn, products}) {
     
     function handleChange(num) {
         setRawInput(num)
+        if (isInCart) setIsInCart(false)
     }
     
     function stars() {
@@ -68,10 +67,12 @@ function Card({product, addFn, delFn, products}) {
 
     function add() {
         addFn({id: product.id, amount: amount})
+        setIsInCart(true)
     }
     function del() {
         delFn(product.id)
         setRawInput('1')
+        setIsInCart(false)
     }
 
     return (

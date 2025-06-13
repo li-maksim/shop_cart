@@ -13,21 +13,13 @@ function App() {
   let total = productAmounts.reduce((acc, curr) => acc + curr, 0)
 
   function addToCart(obj) {
-    if (products.some(e => e.id === obj.id)) {
-      if (total < 450 && total + obj.amount < 450) {
-        let item = products.find(e => e.id === obj.id)
-        let newArr = products.filter(e => e.id !== obj.id)
-        newArr.unshift({id: obj.id, amount: item.amount + obj.amount})
-        setProducts(newArr)
-      } else {
-        alert('Sorry! No more than 450 products can be added to the cart')
-      }
+    if (total < 450 && total + obj.amount < 450) {
+      let item = products.find(e => e.id === obj.id)
+      let newArr = products.filter(e => e.id !== obj.id)
+      newArr.unshift({id: obj.id, amount: obj.amount})
+      setProducts(newArr)
     } else {
-      if (total < 450 && total + obj.amount < 450) {
-        setProducts([...products, {id: obj.id, amount: obj.amount}])
-      } else {
-        alert('Sorry! No more than 450 products can be added to the cart')
-      }
+      alert('Sorry! No more than 450 products can be added to the cart')
     }
   }
 
