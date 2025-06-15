@@ -12,7 +12,7 @@ function Card({product, addFn, delFn, products}) {
     const  amountFns = (() => {
 
         function inputFn() {
-            if (rawInput > 0 && rawInput < 100) {
+            if (rawInput > 0 && rawInput <= 100) {
                 setAmount(parseInt(rawInput))
                 if (isInCart) setIsInCart(false)
             } else {
@@ -20,7 +20,7 @@ function Card({product, addFn, delFn, products}) {
             }
         }
         function increase() {
-            if (amount < 99) {
+            if (amount < 100) {
                 setAmount(amount + 1)
                 setRawInput(amount + 1)
                 if (isInCart) setIsInCart(false)
@@ -82,22 +82,26 @@ function Card({product, addFn, delFn, products}) {
                     <h3 className={styles.title}>{product.title}</h3>
                     <span className={styles.tooltip}>{product.title}</span>
                 </div>
-                <div className={styles.rating}>
-                    <p>
-                        Rating: {Math.round(product.rating.rate)}
-                    </p>
-                    {stars()}
+                <div className={styles.mid_section}>
+                    <div className={styles.rating}>
+                        <p>
+                            Rating: {Math.round(product.rating.rate)}
+                        </p>
+                        {stars()}
+                    </div>
+                    <p className={styles.price}>${product.price}</p>
                 </div>
-                <p className={styles.price}>${product.price}</p>
-                <div className={styles.amount_btns}>
-                    <button className={styles.btn} onClick={amountFns.decrease}>-</button>
-                    <Input val={rawInput} fn={handleChange} blur={amountFns.inputFn}></Input>
-                    <button className={styles.btn} onClick={amountFns.increase}>+</button>
+                <div className={styles.btns}>
+                    <div className={styles.amount_btns}>
+                        <button className={styles.btn} onClick={amountFns.decrease}>-</button>
+                        <Input val={rawInput} fn={handleChange} blur={amountFns.inputFn}></Input>
+                        <button className={styles.btn} onClick={amountFns.increase}>+</button>
+                    </div>
                     {
-                    isInCart
-                    ? <button className={styles.del_btn} onClick={() => del()}>Delete</button>
-                    : <button className={styles.add_btn} onClick={() => add()}>Add to Cart</button>
-                }
+                        isInCart
+                        ? <button className={styles.del_btn} onClick={() => del()}>Delete</button>
+                        : <button className={styles.add_btn} onClick={() => add()}>Add to Cart</button>
+                    }
                 </div>
         </div>
     )

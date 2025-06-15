@@ -42,6 +42,6 @@ button {
 }
 
 .main {
-    min-height: 75vh;
+    min-height: calc(100vh - 130px);
     padding: 20px 10%;
 }

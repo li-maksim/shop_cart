@@ -24,19 +24,20 @@
     font-size: 24px;
     margin: 0;
     margin-top: 14px;
+    margin-left: 20px;
 }
 
 .links {
     display: flex;
     width: 350px;
     justify-content: left;
-    gap: 20px;
+    align-items: center;
+    gap: 50px;
 }
 
 .link {
     text-decoration: none;
     font-size: 18px;
-    margin-top: 15px;
 }
 
 .cart {
@@ -44,18 +45,26 @@
     position: relative;
 }
 
+.cart .link {
+    margin-top: 12px;
+}
+
+.link svg {
+    font-size: 36px;
+}
+
 .cart .cart_num {
     position: absolute;
-    height: 22px;
-    width: 22px;
+    height: 30px;
+    width: 30px;
     font-size: 14px;
     background-color: red;
     text-align: center;
-    line-height: 23px;
+    line-height: 30px;
     border-radius: 100%;
     color: var(--text-snd-color);
     left: 15px;
-    top: 8px;
+    top: 4px;
 }
 
 .ham_icon {
