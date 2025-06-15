@@ -40,7 +40,7 @@ function CheckoutCard({product, amount, fns, delFn}) {
                     <Input val={amount} fn={change.inputFn}></Input>
                     <button className={styles.btn} onClick={change.increase} >+</button>
                 </div>
-                <p>${product.price * amount}</p>
+                <p>${Math.round(product.price * amount * 100) / 100}</p>
             </div>
         </div>
     )

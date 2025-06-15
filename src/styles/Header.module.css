@@ -57,3 +57,11 @@
     left: 15px;
     top: 8px;
 }
+
+.ham_icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+}

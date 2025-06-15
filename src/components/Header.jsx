@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from '../styles/Header.module.css'
 import logoImg from '../assets/logo.png'
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import CartIcon from './CartIcon.jsx'
 
 function Header({totalAmount = 0}) {
 
@@ -16,14 +16,9 @@ function Header({totalAmount = 0}) {
             <nav className={styles.links}>
                 <Link to="/" className={`link ${styles.link}`}>Home</Link>
                 <Link to="/store" className={`link ${styles.link}`}>Store</Link>
-                <Link to="/contact" className={`link ${styles.link}`}>Contact</Link>
+                <Link to="/contact" className={`link ${styles.link}`}>Contacts</Link>
             </nav>
-            <div className={styles.cart}>
-                <Link to="/checkout" className={`link ${styles.link}`}>
-                    <HiOutlineShoppingBag className="icon"/>
-                </Link>
-                <span data-testid="totalAmount" className={styles.cart_num}>{totalAmount}</span>
-            </div>
+            <CartIcon totalAmount={totalAmount} />
         </header>
     )
 }

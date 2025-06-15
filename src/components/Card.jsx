@@ -93,12 +93,12 @@ function Card({product, addFn, delFn, products}) {
                     <button className={styles.btn} onClick={amountFns.decrease}>-</button>
                     <Input val={rawInput} fn={handleChange} blur={amountFns.inputFn}></Input>
                     <button className={styles.btn} onClick={amountFns.increase}>+</button>
-                </div>
-                {
+                    {
                     isInCart
                     ? <button className={styles.del_btn} onClick={() => del()}>Delete</button>
                     : <button className={styles.add_btn} onClick={() => add()}>Add to Cart</button>
                 }
+                </div>
         </div>
     )
 }

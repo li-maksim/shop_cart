@@ -5,7 +5,7 @@ function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.copyright}>
-            © 2022 Top Shelf BC. All Rights Reserved. 
+            © 2025 Top Shelf BC. All Rights Reserved. 
             </div>
             <div className={styles.links}>
                 <a href="#" className='link'>Privacy Policy</a>
