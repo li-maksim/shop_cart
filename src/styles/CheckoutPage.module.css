@@ -2,6 +2,15 @@
     composes: main from './index.css';
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards {
+    width: 70%;
+}
+
 .btn {
     display: block;
     background-color: var(--btn-color);

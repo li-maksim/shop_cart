@@ -46,7 +46,6 @@ function StorePage() {
             <div className={styles.cards}> 
                 {cards}
             </div>
-            <button className={styles.btn} onClick={() => navigate('/checkout')}>Go to Checkout</button>
         </div>
     )
 }

@@ -9,6 +9,9 @@
 
 .content {
     display: flex;
+    margin: 0 auto;
+    max-width: 65%;
+    justify-content: space-between;
     flex-wrap: nowrap;
     gap: 10%;
 }
@@ -28,8 +31,15 @@
     max-width: 200px;
 }
 
+.inputs {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 10px;
+}
+
 .textarea {
-    composes: input from './Input.module.css'
+    composes: input from './Input.module.css';
+    max-width: 100%;
 }
 
 .btn {
@@ -38,6 +48,7 @@
     width: 140px;
     color: var(--text-snd-color);
     border-radius: 20px;
+    margin-top: 10px;
 }
 
 .img {

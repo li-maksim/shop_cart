@@ -14,8 +14,7 @@
 
 .links {
     display: flex;
-    width: 30%;
-    justify-content: space-around;
+    gap: 50px;
 }
 
 .links a:hover {
