@@ -15,7 +15,8 @@ function ContactPage() {
 
     function handleChange(x, type) {
         if (type === 'text') {
-            setInfo({...info, name: x})
+            setInfo({...info, lastName: x})
+            console.log('!')
         } else {
             setInfo({...info, [type]: x})
         }

@@ -2,6 +2,15 @@ import styles from '../styles/Input.module.css'
 
 function Input({type = 'number', val, fn, name, blur}) {
 
+    let x
+    if (name === 'Last Name') {
+        x = 'lastName'
+    } else if (name === 'First Name') { 
+        x = 'name'
+    } else {
+        x = type
+    }
+
     return (
         <input 
             type={type} 
@@ -9,7 +18,7 @@ function Input({type = 'number', val, fn, name, blur}) {
             value={val} 
             name={name} 
             placeholder={name} 
-            onChange={e => fn(e.target.value, type)} 
+            onChange={e => fn(e.target.value, x)} 
             onBlur={blur} 
             role="input"/>
     )
