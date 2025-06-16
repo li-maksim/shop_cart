@@ -74,15 +74,15 @@ function CheckoutPage() {
                 {products.length > 0 &&
                     <div className={styles.total}>
                     <h2>Total:</h2>
-                    <p>Your products: ${total}</p>
+                    <p className={styles.price}>Your products: <br /><br /> <b>${total}</b></p>
                     {total > 200
                     ? <p>Shipping: FREE!</p>
                     : <p>Shipping: $30</p>}
                     <p>Discount: 0%</p>
+                    <button className={styles.btn} onClick={() => handlePurchase()}>Purchase</button>
                     </div>
                 }
             </div>
-            {products.length > 0 && <button className={styles.btn} onClick={() => handlePurchase()}>Purchase</button>}
         </div>
     )
 }

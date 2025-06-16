@@ -1,7 +1,7 @@
 .card {
     display: grid;
     grid-template-columns: 60px calc(100% - 140px) 80px;
-    align-items: center;
+    align-items: start;
 }
 
 .img_wrapper {
@@ -17,6 +17,7 @@
 
 .title {
     box-sizing: border-box;
+    margin-top: 0;
     padding-left: 20px;
     padding-right: 20px;
     font-weight: 500;
@@ -25,6 +26,16 @@
 .price_wrapper {
     display: flex;
     gap: 5px;
+    align-items: start;
+}
+
+.price_wrapper p {
+    margin-top: 5px;
+}
+
+.price_wrapper p:last-child {
+    font-weight: 700;
+    color: darkgreen;
 }
 
 .btns {
