@@ -39,3 +39,15 @@
 .btn:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 810px) {
+    .h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 620px) {
+    .h1 {
+        font-size: 28px;
+    }
+}

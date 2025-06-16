@@ -54,3 +54,26 @@
 .img {
     composes: img from './HomePage.module.css';
 }
+
+@media (max-width: 1090px) {
+    .img {
+        max-width: 320px;
+        max-height: 320px;
+        margin-top: 10px;   
+    }
+}
+
+@media (max-width: 972px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+    .btn {
+        margin: 0 auto;
+    }
+}

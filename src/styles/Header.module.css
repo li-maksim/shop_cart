@@ -67,10 +67,34 @@
     top: 4px;
 }
 
+.ham_header {
+    composes: header;
+    position: static;
+    align-items: center;
+    display: none;
+}
+
 .ham_icon {
     width: 20px;
     height: 20px;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
+}
+
+.ham_bar {
+    display: block;
+    height: 3px;
+    background-color: var(--text-prim-color);
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 930px) {
+    .header {
+        display: none;
+    }
+    .ham_header {
+        display: flex;
+    }
 }

@@ -48,3 +48,24 @@
 .btn svg {
     margin-top: 6px;
 }
+
+@media (max-width: 1180px) {
+    .btns {
+        gap: 0px;
+    }
+    .card {
+        grid-template-columns: 60px calc(100% - 200px) 100px;
+    }
+}
+
+@media (max-width: 670px) {
+    .card {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 10px;
+    }
+}

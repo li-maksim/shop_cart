@@ -25,3 +25,12 @@
 .btn:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 920px) {
+    .content {
+        flex-direction: column;
+    }
+    .cards {
+        width: 100%;
+    }
+}

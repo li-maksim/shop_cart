@@ -20,3 +20,18 @@
 .links a:hover {
     color: #999999;
 }
+
+@media (max-width: 768px) {
+    .links {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 570px) {
+    .footer * {
+        font-size: 12px;
+    }
+    .links {
+        gap: 10px;
+    }
+}
