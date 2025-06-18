@@ -1,6 +1,7 @@
 # Shop Cart
 
 Небольшой интернет-магазин, созданный с использованием React, адаптирован для мобильных браузеров. Посмотреть можно по [ссылке](https://incomparable-crumble-6fd62b.netlify.app/).
+Данные товаров загружаются из [Fakestore API](fakestoreapi.com).
 
 ## Функции
 
