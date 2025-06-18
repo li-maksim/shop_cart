@@ -74,7 +74,7 @@ function CheckoutPage() {
                 {products.length > 0 &&
                     <div className={styles.total}>
                     <h2>Total:</h2>
-                    <p className={styles.price}><b>${total}</b></p>
+                    <p className={styles.price}><b>${Math.round(total * 100) / 100}</b></p>
                     {total > 200
                     ? <p>Shipping: FREE!</p>
                     : <p>Shipping: $30</p>}

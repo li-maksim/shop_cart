@@ -4,17 +4,16 @@
 
 .open {
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 105vh;
+    width: 96%;
     background-color: rgba(70, 73, 79, 0.95);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 16px;
     animation: slideIn 0.5s ease forwards;
 }
 

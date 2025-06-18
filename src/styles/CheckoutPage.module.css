@@ -22,7 +22,7 @@
     border-radius: 20px;
     margin-top: 20px;
     color: var(--text-snd-color);
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
@@ -32,7 +32,7 @@
 
 .total {
     line-height: 20px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .total h2 {

@@ -5,7 +5,7 @@
 }
 
 .card * {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .img_wrapper {
@@ -23,8 +23,8 @@
 .title {
     box-sizing: border-box;
     margin-top: 0;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
     font-weight: 500;
 }
 
@@ -36,7 +36,7 @@
 
 .price_wrapper p {
     margin-top: 5px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .price_wrapper p:last-child {
@@ -51,7 +51,7 @@
 
 .btn {
     background: none;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .btns input {
@@ -60,7 +60,7 @@
     text-align: center;
     padding: 0;
     border: none;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .btn svg {

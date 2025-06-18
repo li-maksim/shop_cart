@@ -10,31 +10,29 @@
 
 .content {
     display: flex;
-    margin: 0 auto;
-    max-width: 65%;
     justify-content: space-between;
     flex-wrap: nowrap;
-    gap: 10%;
+    gap: 5%;
 }
 
 .p {
     color: var(--text-snd-color);
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     gap: 10px;
 }
 
 .form input {
-    max-width: 200px;
+    max-width: 95%;
     height: 40px;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .inputs {
@@ -45,11 +43,11 @@
 
 .textarea {
     composes: input from './Input.module.css';
-    max-width: 100%;
+    max-width: 96.5%;
     font-weight: 300;
     padding-top: 10px;
     color: black;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .btn {
@@ -60,12 +58,12 @@
     color: var(--text-snd-color);
     border-radius: 20px;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
 .img {
-    composes: img from './HomePage.module.css';
+    max-width: 480px;
 }
 
 @media (max-width: 1090px) {
