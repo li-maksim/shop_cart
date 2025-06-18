@@ -9,7 +9,7 @@ function HomePage() {
     return (
         <div className={styles.homepage}>
             <div className={styles.content}>
-                <h1 className={`h1, ${styles.h1}`}>Welcome to Top Shelf — Your Home for Cutting-Edge Electronics</h1>
+                <h1 className={`h1, ${styles.h1}`}>Welcome to Top Shelf! <br />Your Home for Cutting-Edge Electronics</h1>
                 <p className={styles.p}>At Top Shelf, we bring the future to your fingertips. Whether you're upgrading your home, enhancing your workspace, or searching for the perfect gift, our wide range of electronics has something for everyone.</p>
                 <p className={styles.p}>With trusted brands, competitive prices, and expert customer support, Top Shelf is your one-stop shop for all things tech. From the everyday essentials to the latest innovations, we’re here to keep you connected and ahead of the curve.</p>
                 <p><b>Why choose us?</b></p>

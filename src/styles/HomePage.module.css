@@ -16,6 +16,7 @@
     margin: 0 auto;
     margin-top: 40px;
     max-width: 65%;
+    font-size: 20px;
 }
 
 .h1 {
@@ -30,10 +31,12 @@
     display: block;
     background-color: var(--btn-color);
     height: 40px;
-    width: 140px;
+    width: 220px;
     border-radius: 20px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .btn:hover {

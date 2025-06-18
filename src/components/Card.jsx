@@ -3,7 +3,7 @@ import styles from '../styles/Card.module.css'
 import Input from './Input.jsx'
 import { HiStar } from 'react-icons/hi'
 
-function Card({product, addFn, delFn, products}) {
+function Card({product, addFn, delFn}) {
 
     const [isInCart, setIsInCart] = useState(false)
     const [rawInput, setRawInput] = useState('1')
@@ -85,7 +85,7 @@ function Card({product, addFn, delFn, products}) {
                 <div className={styles.mid_section}>
                     <div className={styles.rating}>
                         <p>
-                            Rating: {Math.round(product.rating.rate)}
+                            Rating: <b>{Math.round(product.rating.rate)}</b>
                         </p>
                         {stars()}
                     </div>

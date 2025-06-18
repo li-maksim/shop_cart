@@ -4,7 +4,7 @@
 
 .content {
     display: flex;
-    gap: 150px;
+    gap: 170px;
 }
 
 .cards {
@@ -22,6 +22,8 @@
     border-radius: 20px;
     margin-top: 20px;
     color: var(--text-snd-color);
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 .btn:hover {
@@ -29,7 +31,8 @@
 }
 
 .total {
-    line-height: 15px;
+    line-height: 20px;
+    font-size: 20px;
 }
 
 .total h2 {
@@ -38,6 +41,7 @@
 
 .price b {
     font-size: 36px;
+    color: green;
 }
 
 @media (max-width: 1280px) {
@@ -53,5 +57,11 @@
     }
     .cards {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout_page {
+        padding: 20px 4%;
     }
 }

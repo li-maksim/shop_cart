@@ -53,7 +53,7 @@ function ContactPage() {
                         name="comment" placeholder="Comment" 
                         onChange={(e) => {handleChange(e.target.value, 'comment')}}
                         rows="5"
-                        cols="9"
+                        cols=""
                         value={info.comment}
                         >
                     </textarea>

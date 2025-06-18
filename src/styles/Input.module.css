@@ -4,6 +4,7 @@
     border-radius: 10px;
     padding-left: 10px;
     font-size: 14px;
+    color: black;
 }
 
 input::-webkit-outer-spin-button,
