@@ -48,4 +48,13 @@
     .h1 {
         font-size: 28px;
     }
+    .content {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .content {
+        max-width: 800px;
+    }
 }

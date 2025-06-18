@@ -27,5 +27,6 @@
 @media (max-width: 850px) {
     .cards {
         justify-content: center;
+        row-gap: 5px;
     }
 }
