@@ -124,3 +124,9 @@ svg.gold_icon {
 .del_btn:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 931px) {
+    .tooltip {
+        display: none;
+    }
+}
